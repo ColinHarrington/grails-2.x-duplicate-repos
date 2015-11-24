@@ -7,7 +7,9 @@ grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
-grails.plugin.location.'asdf' = "plugins/asdf"
+grails.plugin.location.'foo' = "../foo"
+grails.plugin.location.'bar' = "../bar"
+grails.plugin.location.'baz' = "../baz"
 
 
 grails.project.fork = [
@@ -36,6 +38,7 @@ grails.project.dependency.resolution = {
     legacyResolve false // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
 
     repositories {
+        inherits true // Whether to inherit repository definitions from plugins
 
         grailsPlugins()
         grailsHome()
@@ -54,7 +57,6 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.29'
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
         test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
-         compile 'batman:was:here' // Dependency that doesn't exist
     }
 
     plugins {
